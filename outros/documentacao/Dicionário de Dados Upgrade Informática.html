@@ -1,0 +1,97 @@
+<html><head>
+<title>Data dictionary: upgrade_informatica</title>
+<style>
+    td,th {
+      text-align:center; 
+      vertical-align:middle;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    caption, th, td {
+      padding: .2em .8em;
+      border: 1px solid #fff;
+    }
+    caption {
+      background: #dbb768;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    th {
+      font-weight: bold;
+      background: #f3ce7d;
+    }
+    td {
+      background: #ffea97;
+    }
+  </style>
+</head>
+<body>
+<table><caption>Table: cliente - </caption>
+<tr><td colspan="7">Attributes</td></tr>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Not Null</th>
+<th>PK</th>
+<th>FK</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+<tr><td>idCliente</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>CPFCliente</td><td>VARCHAR(14)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>RGCliente</td><td>VARCHAR(12)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>nomeCliente</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>dataNascimentoCliente</td><td>DATE</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>sexoCliente</td><td>VARCHAR(9)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>CEPCliente</td><td>CHAR(9)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>enderecoCliente</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>bairroCliente</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>complementoCliente</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>cidadeCliente</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>UFCliente</td><td>CHAR(2)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>telefoneFixoCliente</td><td>VARCHAR(14)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>telefoneCelularCliente</td><td>VARCHAR(15)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>emailCliente</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>skypeCliente</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+<tr><td>observacoesCliente</td><td>VARCHAR(150)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table></br>
+<table><caption>Table: ordemservico - </caption>
+<tr><td colspan="7">Attributes</td></tr>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Not Null</th>
+<th>PK</th>
+<th>FK</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+<tr><td>idOrdemServico</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>id_idCliente</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td></td></tr>
+<tr><td>dataOS</td><td>TIMESTAMP</td><td>Yes</td><td>No</td><td>No</td><td>CURRENT_TIMESTAMP</td><td></td></tr>
+<tr><td>equipamento</td><td>VARCHAR(150)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>defeito</td><td>VARCHAR(150)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>servico</td><td>VARCHAR(150)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>tecnico</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>valor</td><td>DECIMAL(10,2)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td></td></tr>
+</table></br>
+<table><caption>Table: usuario - </caption>
+<tr><td colspan="7">Attributes</td></tr>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Not Null</th>
+<th>PK</th>
+<th>FK</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+<tr><td>idUsuario</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>login</td><td>VARCHAR(13)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>senha</td><td>VARCHAR(13)</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>nivel</td><td>INT(1)</td><td>Yes</td><td>No</td><td>No</td><td>'1'</td><td></td></tr>
+<tr><td>ativo</td><td>TINYINT(1)</td><td>Yes</td><td>No</td><td>No</td><td>'1'</td><td></td></tr>
+<tr><td>cadastro</td><td>DATETIME</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table></br>
+</body></html>

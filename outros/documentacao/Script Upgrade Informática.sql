@@ -1,0 +1,61 @@
+CREATE DATABASE UPGRADE_INFORMATICA;
+
+USE UPGRADE_INFORMATICA;
+
+CREATE TABLE Usuario (
+idUsuario INT AUTO_INCREMENT,
+PRIMARY KEY (idUsuario),
+login VARCHAR(13) NOT NULL,
+senha VARCHAR(13) NOT NULL,
+nivel INT(1) UNSIGNED NOT NULL DEFAULT '1',
+ativo BOOL NOT NULL DEFAULT '1',
+cadastro DATETIME NOT NULL,
+KEY nivel(nivel)
+);
+
+ALTER TABLE Usuario ADD CONSTRAINT UNIQUE_LOGINUSUARIO UNIQUE(login);
+
+INSERT INTO Usuario VALUES(NULL, 'supervisor', '0100', '3', '1', NOW());
+INSERT INTO Usuario VALUES(NULL, 'tecnico', '0010', '2', '1', NOW());
+INSERT INTO Usuario VALUES(NULL, 'estagiario', '0001', '1', '1', NOW());
+
+CREATE TABLE Cliente (
+idCliente INT AUTO_INCREMENT,
+PRIMARY KEY (idCliente),
+CPFCliente VARCHAR(14),
+RGCliente VARCHAR(12),
+nomeCliente VARCHAR(100) NOT NULL,
+dataNascimentoCliente DATE NOT NULL,
+sexoCliente VARCHAR(9) NOT NULL,
+CEPCliente CHAR(9) NOT NULL,
+enderecoCliente VARCHAR(100) NOT NULL,
+bairroCliente VARCHAR(100) NOT NULL,
+complementoCliente VARCHAR(100),
+cidadeCliente VARCHAR(100) NOT NULL,
+UFCliente CHAR(2) NOT NULL,
+telefoneFixoCliente VARCHAR(14) NOT NULL,
+telefoneCelularCliente VARCHAR(15) NOT NULL,
+emailCliente VARCHAR(100),
+skypeCliente VARCHAR(100),
+observacoesCliente VARCHAR(150)
+);
+
+ALTER TABLE Cliente ADD CONSTRAINT UNIQUE_CPFCLIENTE UNIQUE(CPFCliente);
+ALTER TABLE Cliente ADD CONSTRAINT UNIQUE_RGCLIENTE UNIQUE(RGCliente);
+ALTER TABLE Cliente ADD CONSTRAINT UNIQUE_EMAILCLIENTE UNIQUE(emailCliente);
+ALTER TABLE Cliente ADD CONSTRAINT UNIQUE_SKYPECLIENTE UNIQUE(skypeCliente);
+
+CREATE TABLE ordemServico (
+idOrdemServico INT AUTO_INCREMENT,
+PRIMARY KEY (idOrdemServico),
+id_idCliente INT NOT NULL,
+dataOS TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+tipo varchar(25) NOT NULL,
+situacao varchar(50) NOT NULL,
+equipamento VARCHAR(150) NOT NULL,
+defeito VARCHAR(150) NOT NULL,
+servico VARCHAR(150) NOT NULL,
+tecnico VARCHAR(100) NOT NULL,
+valor DECIMAL(10,2),
+FOREIGN KEY (id_idCliente) REFERENCES Cliente(idCliente)
+);

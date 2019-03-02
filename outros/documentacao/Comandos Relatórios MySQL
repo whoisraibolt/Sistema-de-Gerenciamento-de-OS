@@ -1,0 +1,7 @@
+Relatório Clientes:
+
+SELECT * FROM cliente ORDER BY nomeCliente;
+
+Relatório Serviços:
+
+SELECT O.idOrdemServico, id_idCliente, dataOS, tipo, situacao, equipamento, defeito, servico, tecnico, valor, C.nomeCliente, telefoneFixoCliente FROM ordemServico As O INNER JOIN cliente AS C ON (C.idCliente = O.id_idCliente);
