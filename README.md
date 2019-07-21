@@ -1,5 +1,10 @@
 # Sistema de Gerenciamento de Ordem de Serviço
 
+![GitHub language count](https://img.shields.io/github/languages/count/whoisraibolt/Sistema-de-Gerenciamento-de-OS.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/whoisraibolt/Sistema-de-Gerenciamento-de-OS.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/whoisraibolt/Sistema-de-Gerenciamento-de-OS.svg)
+![GitHub](https://img.shields.io/github/license/whoisraibolt/Sistema-de-Gerenciamento-de-OS.svg)
+
 ## Visão Geral
 
 Este projeto tem como proposta o desenvolvimento de um Sistema de Gerenciamento de Ordem de Serviço para assistência técnica utilizando a linguagem de programação orientada a objetos Java e o Sistema de Gerenciamento de Banco de Dados (SGBD) MySQL.
